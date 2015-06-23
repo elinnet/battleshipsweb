@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'battleships'
 
+
+
 class BattleshipsWeb < Sinatra::Base
   get '/' do
     erb :index
@@ -14,17 +16,13 @@ class BattleshipsWeb < Sinatra::Base
 
   get '/welcome' do
     @player_name = params[:name]
+    $game = Game.new Player, Board    
     erb :welcome
-    $game = Game.new Player, Board
   end
 
   get '/board' do
     erb :board
   end
-
-
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

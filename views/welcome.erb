@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
+
+
 <% if @player_name != "" %>
   Welcome <%= @player_name %>
+  <pre><%= $game.own_board_view $game.player_1 %><pre>
 <% else %>
   <a href="/name">Please click here to enter your name</a>
 <% end %>
 
-</html>
+
 
 
